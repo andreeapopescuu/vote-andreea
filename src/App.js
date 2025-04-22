@@ -1,8 +1,12 @@
 import React from 'react';
-import VoteAndreea from './VoteAndreea';
+import VoteAndreea from './components/VoteAndreea';
 
 function App() {
-  return <VoteAndreea />;
+  return (
+    <div className="App">
+      <VoteAndreea />
+    </div>
+  );
 }
 
 export default App;
