@@ -134,12 +134,12 @@ const VoteAndreea = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                  <div className="w-[115%] h-[115%] animate-spin-slow"> 
+                  <div className="w-[170%] h-[170%] animate-spin-slow"> 
                     <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible"> 
-                      <path id="circleText" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" /> 
-                      <text className="text-xs fill-current text-neutral-700" dy="-2"> 
+                      <path id="circleText" d="M 50, 50 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" fill="none" /> 
+                      <text className="text-sm fill-current text-neutral-700 font-medium" dy="-2"> 
                         <textPath href="#circleText" startOffset="50%" textAnchor="middle" spacing="auto">
-                          • VOTE FOR ANDREEA • VOTE FOR ANDREEA •
+                          • VOTE FOR ANDREEA • VOTE FOR ANDREEA • VOTE FOR ANDREEA •
                         </textPath>
                       </text>
                     </svg>
