@@ -31,9 +31,6 @@ const VoteAndreea = () => {
   if (phase === PHASES.IDLE) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
-        {/* Grain overlay (simplified) */}
-        <div className="fixed inset-0 bg-neutral-200 opacity-20" 
-             style={{backgroundImage: 'url("/api/placeholder/1/1")', opacity: 0.15}} />
         
         {/* Paper */}
         <button 
@@ -51,9 +48,6 @@ const VoteAndreea = () => {
   if (phase === PHASES.STAMPED) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
-        {/* Grain overlay (simplified) */}
-        <div className="fixed inset-0 bg-neutral-200 opacity-20" 
-             style={{backgroundImage: 'url("/api/placeholder/1/1")', opacity: 0.15}} />
         
         {/* Paper with stamp */}
         <button 
@@ -78,9 +72,6 @@ const VoteAndreea = () => {
   // Revealed phase: showing the main content
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
-      {/* Grain overlay (simplified) */}
-      <div className="fixed inset-0 bg-neutral-200 opacity-20" 
-           style={{backgroundImage: 'url("/api/placeholder/1/1")', opacity: 0.15}} />
       
       {/* Main content */}
       <div className="flex flex-col items-center px-4 text-center">
