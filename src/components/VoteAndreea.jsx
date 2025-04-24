@@ -59,7 +59,7 @@ const VoteAndreea = () => {
                       transition={{ delay: 0.5, duration: 0.3 }}
                       className="text-neutral-600 text-lg sm:text-xl font-bold absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     >
-                      I VOTED!
+                      I VOTED FOR:
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -87,7 +87,7 @@ const VoteAndreea = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.5 }}
                     transition={{ duration: 0.3 }}
-                    className="text-red-800 text-xl sm:text-2xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
+                    className="text-red-800 text-xl sm:text-2xl font-bold absolute top-1/3 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
                   >
                     Andreea
                   </motion.div>
@@ -135,11 +135,27 @@ const VoteAndreea = () => {
                   transition={{ delay: 0.6, duration: 0.5 }}
                 >
                   <div className="w-[170%] h-[170%] animate-spin-slow"> 
-                    <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible"> 
-                      <path id="circleText" d="M 50, 50 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" fill="none" /> 
-                      <text className="text-sm fill-current text-neutral-700 font-medium" dy="-2"> 
-                        <textPath href="#circleText" startOffset="50%" textAnchor="middle" spacing="auto">
-                          • VOTE FOR ANDREEA • VOTE FOR ANDREEA • VOTE FOR ANDREEA •
+                    <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
+                      {/* renamed id to avoid collisions */}
+                      <path
+                        id="orbitTextPath"
+                        d="M 50, 50 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
+                        fill="none"
+                      />
+                      <text
+                        className="text-sm fill-current text-neutral-700 font-medium"
+                        dy="-2"
+                      >
+                        <textPath
+                          href="#orbitTextPath"
+                          startOffset="50%"
+                          textAnchor="middle"
+                          method="align"
+                          spacing="exact"
+                          textLength="320"
+                          lengthAdjust="spacingAndGlyphs"
+                        >
+                          • VOTE FOR ANDREEA • VOTE FOR ANDREEA •
                         </textPath>
                       </text>
                     </svg>
@@ -189,4 +205,4 @@ const VoteAndreea = () => {
   );
 };
 
-export default VoteAndreea; 
+export default VoteAndreea;
