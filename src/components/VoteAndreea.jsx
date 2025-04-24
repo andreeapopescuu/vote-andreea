@@ -114,7 +114,7 @@ const VoteAndreea = () => {
                 transition={{ delay: 0.2, duration: 0.6 }} 
                 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-10"
               >
-                Vote&nbsp;Andreea!
+                &nbsp;
               </motion.h1>
 
               {/* Portrait + Orbiting Text */}
@@ -170,9 +170,8 @@ const VoteAndreea = () => {
                 transition={{ delay: 0.7, duration: 0.6 }} 
                 className="max-w-xl text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 px-2 sm:px-4"
               >
-                Andreea is a passionate EPOS student from Cluj‑Napoca committed to empowering every
-                voice in the University of Bologna community. Her grassroots‑organising experience
-                fuels a vision of inclusive, student‑driven policy.
+                Andreea is a passionate EPOS student from Romania committed to empowering every
+                voice in the University of Bologna community.
               </motion.p>
 
               {/* Video Placeholder */}
