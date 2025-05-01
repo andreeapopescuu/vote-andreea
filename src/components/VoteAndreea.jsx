@@ -189,7 +189,7 @@ const VoteAndreea = () => {
                 className="max-w-xl text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 px-2 sm:px-4 space-y-4"
               >
                 <p>
-                  <span className="font-semibold">Hi! I'm Andrea Popescu,</span> a first-year EPOS student from Bucharest, Romania. I have extensive experience in student representation and leadership: during high school, I served as Director of Extracurricular Activities, was elected Student Council President, and founded Bucharest's first youth NGO dedicated to environmental issues.
+                  <span className="font-semibold">Hi! I'm Andreea Popescu,</span> a first-year EPOS student from Bucharest, Romania. I have extensive experience in student representation and leadership: during high school, I served as Director of Extracurricular Activities, was elected Student Council President, and founded Bucharest's first youth NGO dedicated to environmental issues.
                 </p>
 
                 <p>
@@ -197,7 +197,7 @@ const VoteAndreea = () => {
                 </p>
 
                 <p>
-                  <span className="font-semibold">Vote on May 14th-15th</span> to help bring these changes to life. Find me on the UDU – RETE DEGLI UNIVERSITARI list as POPESCU ANDREA-MADALINA.
+                  <span className="font-semibold">Vote on May 14th-15th</span> to help bring these changes to life. Find me on the UDU – RETE DEGLI UNIVERSITARI list as POPESCU ANDREEA-MADALINA.
                 </p>
               </motion.div>
 
