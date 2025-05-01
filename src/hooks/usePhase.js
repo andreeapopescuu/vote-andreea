@@ -10,10 +10,19 @@ export const usePhase = () => {
     return () => document.body.classList.remove('sepia-bg');
   }, []);
 
+  // Automatically transition from STAMP_REMOVED to REVEALED after delay
+  useEffect(() => {
+    if (phase === PHASES.STAMP_REMOVED) {
+      const timer = setTimeout(() => {
+        setPhase(PHASES.REVEALED);
+      }, 1000); // 2 second delay to allow the "Andreea" text to be visible
+      return () => clearTimeout(timer);
+    }
+  }, [phase]);
+
   const handlePaperClick = () => {
     if (phase === PHASES.IDLE) setPhase(PHASES.STAMPED);
     else if (phase === PHASES.STAMPED) setPhase(PHASES.STAMP_REMOVED);
-    else if (phase === PHASES.STAMP_REMOVED) setPhase(PHASES.REVEALED);
   };
 
   return { phase, handlePaperClick };
