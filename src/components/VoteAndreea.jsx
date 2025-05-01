@@ -33,18 +33,17 @@ const VoteAndreea = () => {
                 style={{ transformStyle: 'preserve-3d' }}
                 whileHover={phase === PHASES.IDLE ? { rotateX: 6, rotateY: -6, scale: 1.015 } : {}}
                 whileTap={phase === PHASES.IDLE ? { scale: 0.97 } : {}}
-                aria-label={
-                  phase === PHASES.IDLE ? "Tap to vote" :
-                  phase === PHASES.STAMPED ? "Tap to remove stamp" :
-                  "Tap to reveal content"
-                }
+                aria-label={phase === PHASES.IDLE ? "Tap to vote" : "Voting in progress"}
               >
                 {/* Use AnimatePresence for text transitions inside the button */}
                 <AnimatePresence mode="wait">
                   {phase === PHASES.IDLE && (
                     <motion.span
                       key="idle-text"
-                      exit={{ opacity: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3 }}
                       className="text-neutral-400 text-lg select-none"
                     >
                       Tap to Vote
@@ -74,7 +73,7 @@ const VoteAndreea = () => {
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.5, y: 50, transition: { duration: 0.3, ease: 'easeIn' } }}
                     transition={{ type: 'spring', stiffness: 120, damping: 18, mass: 0.6 }}
-                    className="w-24 sm:w-28 h-24 sm:h-28 bg-neutral-800 rounded-full flex items-center justify-center shadow-xl
+                    className="w-24 sm:w-28 h-24 sm:h-28 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-full flex items-center justify-center shadow-xl
                                absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
                   >
                     <span className="text-white font-semibold">STAMP</span>
@@ -83,11 +82,15 @@ const VoteAndreea = () => {
                 {phase === PHASES.STAMP_REMOVED && (
                   <motion.div
                     key="andreea-text"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.5 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-red-800 text-xl sm:text-2xl font-bold absolute top-1/3 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+                    initial={{ opacity: 0, scale: 0.5, y: 50 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.5, y: -50 }}
+                    transition={{ 
+                      duration: 0.6,
+                      ease: [0.25, 1, 0.5, 1],
+                      scale: { duration: 0.4 }
+                    }}
+                    className="text-red-800 text-2xl sm:text-3xl font-bold absolute top-1/3 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
                   >
                     Andreea
                   </motion.div>

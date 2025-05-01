@@ -10,19 +10,32 @@ export const usePhase = () => {
     return () => document.body.classList.remove('sepia-bg');
   }, []);
 
-  // Automatically transition from STAMP_REMOVED to REVEALED after delay
+  // Automatically transition through all phases after first click
+  useEffect(() => {
+    if (phase === PHASES.STAMPED) {
+      const timer1 = setTimeout(() => {
+        setPhase(PHASES.STAMP_REMOVED);
+      }, 2000); // Show stamp for 2 seconds
+      
+      return () => clearTimeout(timer1);
+    }
+  }, [phase]);
+
+  // Separate effect for STAMP_REMOVED to REVEALED transition
   useEffect(() => {
     if (phase === PHASES.STAMP_REMOVED) {
-      const timer = setTimeout(() => {
+      const timer2 = setTimeout(() => {
         setPhase(PHASES.REVEALED);
-      }, 1000); // 2 second delay to allow the "Andreea" text to be visible
-      return () => clearTimeout(timer);
+      }, 2000); // Show "Andreea" text for 2 seconds
+      
+      return () => clearTimeout(timer2);
     }
   }, [phase]);
 
   const handlePaperClick = () => {
-    if (phase === PHASES.IDLE) setPhase(PHASES.STAMPED);
-    else if (phase === PHASES.STAMPED) setPhase(PHASES.STAMP_REMOVED);
+    if (phase === PHASES.IDLE) {
+      setPhase(PHASES.STAMPED);
+    }
   };
 
   return { phase, handlePaperClick };
