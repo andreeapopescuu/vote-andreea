@@ -119,14 +119,29 @@ const VoteAndreea = () => {
 
               {/* Portrait + Orbiting Text */}
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mb-8 sm:mb-12">
-                <motion.img
-                  src={PORTRAIT_IMAGE_URL}
-                  alt="Andreea portrait"
-                  className="w-full h-full object-cover rounded-full border-4 border-white shadow-xl"
+                {/* Enhanced glow effect */}
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-gradient-to-br from-neutral-900 to-neutral-800 opacity-5 blur-md"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
                 />
+                {/* Portrait container with enhanced shadow */}
+                <motion.div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    boxShadow: '0 0 15px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.05)',
+                  }}
+                >
+                  <motion.img
+                    src={PORTRAIT_IMAGE_URL}
+                    alt="Andreea portrait"
+                    className="w-full h-full object-cover rounded-full border-[3px] border-white/90 shadow-[inset_0_0_10px_rgba(0,0,0,0.05)] relative z-10"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                  />
+                </motion.div>
                 {/* Orbiting Text Container */}
                 <motion.div
                   className="absolute inset-0 flex items-center justify-center pointer-events-none" 
@@ -164,15 +179,24 @@ const VoteAndreea = () => {
               </div>
 
               {/* Bio */}
-              <motion.p
+              <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.6 }} 
-                className="max-w-xl text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 px-2 sm:px-4"
+                className="max-w-xl text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 px-2 sm:px-4 space-y-4"
               >
-                Andreea is a passionate EPOS student from Romania committed to empowering every
-                voice in the University of Bologna community.
-              </motion.p>
+                <p>
+                  <span className="font-semibold">Hi! I'm Andrea Popescu,</span> a first-year EPOS student from Bucharest, Romania. I have extensive experience in student representation and leadership: during high school, I served as Director of Extracurricular Activities, was elected Student Council President, and founded Bucharest's first youth NGO dedicated to environmental issues.
+                </p>
+
+                <p>
+                  I understand the challenges we face as international students at UniBo. With over 8,000 of us here—and most economics courses taught in English—we still encounter accessibility barriers. I've gathered your insights and concerns via feedback forms, and I'm committed to amplifying our collective voice.
+                </p>
+
+                <p>
+                  <span className="font-semibold">Vote on May 14th-15th</span> to help bring these changes to life. Find me on the UDU – RETE DEGLI UNIVERSITARI list as POPESCU ANDREA-MADALINA.
+                </p>
+              </motion.div>
 
               {/* Video Placeholder */}
               <motion.div
