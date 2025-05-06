@@ -197,6 +197,18 @@ const VoteAndreea = () => {
                 </p>
 
                 <p>
+                  The feedback form is still active, and I welcome any further thoughts or suggestions you may wish to share at{' '}
+                  <a 
+                    href="https://forms.gle/9HrwvkZC7zDzt3op8" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="italic text-blue-500 hover:text-blue-600"
+                  >
+                    https://forms.gle/9HrwvkZC7zDzt3op8
+                  </a>.
+                </p>
+
+                <p>
                   <span className="font-semibold">Vote on May 14th-15th</span> to help bring these changes to life. Find me on the UDU – RETE DEGLI UNIVERSITARI list as POPESCU ANDREEA-MADALINA.
                 </p>
               </motion.div>
@@ -206,10 +218,18 @@ const VoteAndreea = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.6 }} 
-                className="w-full max-w-xl aspect-video bg-neutral-900 rounded-lg flex items-center justify-center
-                           text-white shadow-lg mb-4 sm:mb-6 mx-2 sm:mx-0"
+                className="w-full max-w-xl aspect-video rounded-lg shadow-lg mb-4 sm:mb-6 mx-2 sm:mx-0"
               >
-                <span className="text-sm opacity-70">Video message coming soon…</span>
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/-TmiIS6hcPY?si=jvgzkE7gVxgMZ35Z" 
+                  title="YouTube video player" 
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen 
+                  className="rounded-lg"
+                ></iframe>
               </motion.div>
 
               {/* Dual‑candidacy */}
